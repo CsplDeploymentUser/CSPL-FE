@@ -1,8 +1,10 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
+
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -18,10 +20,24 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+@media only screen and (min-width: 1680px) {
+  .container {
+    max-width: 1680px;
+  }
+} 
+.cart{
+  background: rgba(255,255,255,0.9);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.45);
+}
+.cartshadow{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
