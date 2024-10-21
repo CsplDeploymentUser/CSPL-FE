@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/Components/ServerSideComponents/FooterComponents/FooterComponent";
+import { HeaderApi } from "@/apis/HomepageApi";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -19,11 +20,15 @@ export const metadata: Metadata = {
   description: "Software Solutions Company",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const response= await HeaderApi()
+
+
   return (
     <html lang="en" >
       <body
@@ -31,7 +36,7 @@ export default function RootLayout({
       >
         {children}
        <div className="flex justify-center items-center">
-       <Footer/>
+       <Footer response={response}/>
        
        </div>
       </body>
