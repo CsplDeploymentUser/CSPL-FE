@@ -27,6 +27,7 @@ const Footer: React.FC<Props> = ({ response }) => {
           <div className="text-center gap-6 px-4">
             <div className="flex flex-col items-center  ">
               <div className="w-[270px] mt-2">
+                
                 <img
                   src={`${process.env.NEXT_PUBLIC_BASE_URL}${response?.company_details?.logo}`}
                   alt={response?.company_details?.logo_alternate_text}
