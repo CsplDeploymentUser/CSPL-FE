@@ -39,20 +39,19 @@ function WhatsNewSection() {
                 <h2 className="text-4xl font-bold text-center mb-8">WHAT'S NEW</h2>
                 <div className="border-b-[1px] w-[100px] h-9 border-black"></div>
             </div>
-
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 ">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 md:px-0 px-4">
                 {newsData.map((news) => (
-                    <div className="bg-white rounded-lg cartshadow border-[1px] border-gray-100">
+                    <div className="flex md:flex-col flex-row bg-white rounded-lg border-[1px] cartshadow  md:p-0 p-2">
                         <img
                             src={news?.imageUrl}
                             alt={news?.title}
-                            className="w-full h-54 object-cover rounded-md"
+                            className="md:w-full w-[180px] md:h-54 h-25 object-cover rounded-md"
                         />
-                        <div className="p-4">
-                            <span className="text-blue-600 text-[12px] inline-block bg-gray-100 px-2 py-1 rounded-md">
+                        <div className="md:p-4 px-3">
+                            <span className="text-blue-600 text-[15px] inline-block bg-gray-100 px-2 py-1 rounded-md">
                                 {news?.category}
                             </span>
-                            <h2 className="text-xl font-semibold text-gray-800 py-3">
+                            <h2 className="md:text-xl text-md md:font-semibold text-gray-800 py-3">
                                 {news?.title}
                             </h2>
                             <p className="text-gray-500 text-sm ">{news?.date}</p>

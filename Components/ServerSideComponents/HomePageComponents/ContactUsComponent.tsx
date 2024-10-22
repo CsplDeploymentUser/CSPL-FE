@@ -52,18 +52,20 @@ const ContactForm = () => {
 
 
     return (
-        <div className="cartshadow bg-white rounded-lg max-w-7xl mx-auto px-4 lex mt-10">
-            <div className="flex px-6">
-                <div className="bg-black text-white flex items-center justify-center px-4 py-8 z-10 w-[80px]">
-                    <p className="transform rotate-90 writing-mode-vertical-rl text-xl tracking-wider">CONTACT US</p>
+        <div className="cartshadow bg-white rounded-lg max-w-7xl mx-auto px-4">
+            <div className="md:flex md:px-6 md:border-none  rounded-lg border-[1px]">
+                
+                <div className="bg-black text-white flex items-center justify-center px-4 md:py-8 py-4 z-10 md:w-[80px] md:mt-0 mt-6 w-full">
+                    <p className="transform md:rotate-90 writing-mode-vertical-rl text-xl tracking-wider">CONTACT US</p>
                 </div>
-                <div className="p-8">
+
+                <div className="md:p-8 p-6">
                     <form className="space-y-6" onSubmit={submit}>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                             <input
                                 type="text"
                                 placeholder="Full Name"
-                                className="border bg-[#EFEFEF] outline-none text-black rounded-md p-3 w-full h-[80px] placeholder-black focus:outline-none focus:ring-2 focus:ring-black"
+                                className="border bg-[#EFEFEF] outline-none text-black rounded-md p-3 w-full md:h-[80px] placeholder-black focus:outline-none focus:ring-2 focus:ring-black"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                                 required
@@ -96,7 +98,7 @@ const ContactForm = () => {
                             <input type="email" placeholder="Email" className="border bg-[#EFEFEF] rounded-md p-3 w-full focus:outline-none  placeholder-black" value={email} onChange={(e) => setEmail(e.target.value)} required />
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <select className="border rounded-md p-3 w-full focus:outline-none focus:ring-2 focus:ring-black h-[80px]" value={service} onChange={(e) => setService(e.target.value)} required>
+                            <select className="border rounded-md p-3 w-full focus:outline-none focus:ring-2 focus:ring-black md:h-[80px]" value={service} onChange={(e) => setService(e.target.value)} required>
 
                                 <option>Service 1</option>
                                 <option>Service 2</option>
@@ -113,6 +115,7 @@ const ContactForm = () => {
                         </div>
                     </form>
                 </div>
+
             </div>
         </div>
     );

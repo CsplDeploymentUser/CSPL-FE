@@ -7,18 +7,7 @@ const Newsletter: React.FC = () => {
   const [email, setEmail] = useState<string>("");
 
   const submitNewsLetterForm = async (e: any) => {
-    // e.preventDefault();
-    // if (email) {
-    // //   const newsletterResponse = await newsletter(email);
-    //   if (newsletterResponse?.result?.hasOwnProperty("error")) {
-    //     toast.error("Error Submitting Newsletter Form");
-    //   } else {
-    //     toast.success("Newsletter Form Successfully Submitted");
-    //     setEmail("");
-    //   }
-    // } else {
-    //   toast.error("Please Fill Up Your Email Address First");
-    // }
+
   };
 
   return (

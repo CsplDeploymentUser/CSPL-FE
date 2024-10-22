@@ -33,11 +33,11 @@ const SineupComponent = (props: Props) => {
     const [email, setEmail] = useState<string>("")
     console.log("setEmail", setEmail)
     return (
-        <div className="relative w-full h-96 bg-cover bg-center px-4 rounded-t-xl" style={{ backgroundImage: "url('/signup.png')" }}>
+        <div className="relative w-full md:h-96 h-60 bg-cover bg-center md:px-4 rounded-t-xl" style={{ backgroundImage: "url('/signup.png')" }}>
             {/* <div className="absolute inset-0 bg-black opacity-30 rounded-t-xl"></div> */}
-            <div className="absolute inset-0 flex items-center justify-center">
-                <div className="cart rounded-lg p-8 shadow-lg max-w-lg w-full text-center">
-                    <h2 className="text-4xl font-semibold mb-4">Sign Up For Updates</h2>
+            <div className="absolute inset-0 flex items-center justify-center px-4">
+                <div className="cart rounded-lg md:p-8 p-4 shadow-lg max-w-lg w-full text-center">
+                    <h2 className="md:text-4xl text-2xl font-semibold mb-4">Sign Up For Updates</h2>
                     <form className="space-y-6" onSubmit={submit}>
                         <input
                             type="email"
@@ -52,7 +52,5 @@ const SineupComponent = (props: Props) => {
                 </div>
             </div>
         </div>)
-
-
 }
 export default SineupComponent

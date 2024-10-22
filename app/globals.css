@@ -27,6 +27,11 @@ body {
     text-wrap: balance;
   }
 }
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
 @media only screen and (min-width: 1680px) {
   .container {
     max-width: 1680px;
@@ -38,12 +43,15 @@ body {
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255,255,255,0.45);
 }
-.cartshadow{
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-}
+
 .phone-input-container .PhoneInput {
   width: 100%;
 }
 input.PhoneInputInput {
   display: none;
+}
+@media screen and (min-width: 1024px){
+  .cartshadow{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
 }
