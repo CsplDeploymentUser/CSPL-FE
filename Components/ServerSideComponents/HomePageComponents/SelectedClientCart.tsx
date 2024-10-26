@@ -7,9 +7,6 @@ type props = {
 }
 const SelectiveClientsCart: React.FC<props> = ({ response }) => {
     const [isHovered, setIsHovered] = useState(false);
-
-
-
     const partnerLength = response?.ourpartners?.length;
     return (
         <div className="flex flex-wrap justify-center gap-6" onMouseEnter={() => setIsHovered(true)}
@@ -24,12 +21,12 @@ const SelectiveClientsCart: React.FC<props> = ({ response }) => {
             >
                 {response?.ourpartners?.slice(0, partnerLength / 2)?.map((logo: any, index: any) => (
                     <div className="py-2 px-2">
-                        <div className="w-[200px] flex justify-center items-center md:border-none border bg-white rounded-xl p-4 bg-transparent">
-                            <div className="h-[75px] w-full relative">
+                        <div className="md:w-[380px] w-[200px] flex justify-center items-center md:border-none border bg-white rounded-xl p-4 bg-transparent">
+                            <div className="h-[130px] w-full relative">
                                 <img
                                     src={`${process.env.NEXT_PUBLIC_BASE_URL}${logo?.image}`}
                                     alt={logo?.image_alternate_text}
-                                     className="h-full w-full object-cover"
+                                     className="h-full w-full md:object-cover object-contain"
 
                                 />
                             </div>
@@ -47,12 +44,12 @@ const SelectiveClientsCart: React.FC<props> = ({ response }) => {
             >
                 {response?.ourpartners?.slice(partnerLength / 2,partnerLength)?.map((logo: any, index: any) => (
                     <div className="py-2 px-2">
-                        <div className="w-[200px] flex justify-center items-center md:border-none border bg-white rounded-xl p-4 bg-transparent">
-                            <div className="h-[75px] w-full relative">
+                        <div className="md:w-[380px] w-[200px] flex justify-center items-center md:border-none border bg-white rounded-xl p-4 bg-transparent">
+                            <div className="h-[130px] w-full relative">
                                 <img
                                     src={`${process.env.NEXT_PUBLIC_BASE_URL}${logo?.image}`}
                                     alt={logo?.image_alternate_text}
-                                    className="h-full w-full object-cover"
+                                    className="h-full w-full md:object-cover object-contain"
                                 />
                             </div>
                         </div>

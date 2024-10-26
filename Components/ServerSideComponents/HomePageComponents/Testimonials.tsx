@@ -4,7 +4,7 @@ import TestimonialsCartCompanent from "./TestimonialsCartComponent";
 const Testimonials = async () => {
   const response = await TestimonialsApi();
   return (
-    <section className="mx-auto py-12">
+    <section className="max-w-7xl mx-auto py-6 flex flex-col justify-center items-center">
       <div className="flex justify-center items-center gap-2 mb-12">
         <div className="border-b-[1px] w-[100px] border-black"></div>
         <h2 className="text-4xl font-bold text-center">
@@ -12,7 +12,9 @@ const Testimonials = async () => {
         </h2>
         <div className="border-b-[1px] w-[100px] border-black"></div>
       </div>
-      <TestimonialsCartCompanent response={response} />
+     <div className="">
+     <TestimonialsCartCompanent response={response} />
+     </div>
     </section>
   );
 };

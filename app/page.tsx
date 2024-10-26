@@ -1,6 +1,6 @@
 import BannerSlider from "@/Components/ClientSideComponents/BannerComponents/BannerSlider";
 import AboutUsComponent from "@/Components/ServerSideComponents/HomePageComponents/AboutUsComponent";
-import AchievementsSection from "@/Components/ServerSideComponents/HomePageComponents/AchievementsComponent";
+import AchievementsSection from "@/Components/ServerSideComponents/HomePageComponents/AchievementsSection";
 import ContactForm from "@/Components/ServerSideComponents/HomePageComponents/ContactUsComponent";
 import SelectiveClients from "@/Components/ServerSideComponents/HomePageComponents/SelectedClientComponent";
 import Testimonials from "@/Components/ServerSideComponents/HomePageComponents/Testimonials";

@@ -1,16 +1,16 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { TestimonialsApi } from "@/apis/HomepageApi";
+import SliderFrame from "@/Components/ClientSideComponents/CommonComponents/SliderFrame";
+import React, { useRef } from "react";
 import Slider from "react-slick";
 
-type props = {
-  response: any;
-};
-const TestimonialsCartCompanent: React.FC<props> = ({ response }) => {
-  const settings = {
+
+const TestimonialsComponent: React.FC<{ response: any }> = ({ response }) => {
+  const sliderRef = useRef<Slider | null>(null);
+
+  const sliderSettings = {
     dots: true,
     infinite: true,
-    autoplay: false,
+    autoplay: true,
     arrows: false,
     speed: 500,
     slidesToShow: 3,
@@ -26,7 +26,7 @@ const TestimonialsCartCompanent: React.FC<props> = ({ response }) => {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
@@ -41,16 +41,16 @@ const TestimonialsCartCompanent: React.FC<props> = ({ response }) => {
   };
 
   return (
-    <div className="max-w-7xl ">
-      <div {...settings} className="md:flex">
-        {response?.testimonials?.map((testimonial: any, index: any) => (
-          <div key={index} className=" flex p-4">
+    <div className="sm:w-[650px] lg:w-[1300px] w-[400px]">
+      <SliderFrame settings={sliderSettings} selector={sliderRef}>
+        {response?.testimonials?.map((testimonial: any, index: number) => (
+          <div key={index} className="flex p-4">
             <div className="bg-white rounded-lg shadow-lg p-6">
               <div className="py-5">
                 <img
                   src="/test.png"
                   alt={testimonial?.name}
-                  className="w-[100px] h-[80px]  object-contain mr-4"
+                  className="w-[100px] h-[80px] object-contain mr-4"
                 />
               </div>
               <p className="text-black mb-4">{testimonial?.description}</p>
@@ -61,9 +61,9 @@ const TestimonialsCartCompanent: React.FC<props> = ({ response }) => {
                   alt={testimonial?.name}
                   className="w-[80px] h-[80px] rounded-full object-cover mr-4"
                 />
-                <div className="">
+                <div>
                   <h3 className="text-xl font-semibold">{testimonial?.name}</h3>
-                  <div className="">
+                  <div>
                     <p className="text-sm">{testimonial?.position}</p>
                     <p className="text-sm">{testimonial?.company_name}</p>
                   </div>
@@ -72,9 +72,9 @@ const TestimonialsCartCompanent: React.FC<props> = ({ response }) => {
             </div>
           </div>
         ))}
-      </div>
+      </SliderFrame>
     </div>
   );
 };
 
-export default TestimonialsCartCompanent;
+export default TestimonialsComponent;

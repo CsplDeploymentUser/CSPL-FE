@@ -24,7 +24,7 @@ const SelectedWorkTabImages = ({ ActiveTabId }: Props) => {
     FetchImages();
   }, [ActiveTabId]);
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className="grid grid-cols-2 md:grid-cols-2 md:gap-8 gap-4 px-4">
       {displayedImages?.map((project: any, index: number) => (
         <div
           key={index}

@@ -8,7 +8,7 @@ const WorkProcess = async () => {
   return (
     <>
       {response?.result === true && (
-        <div className="max-w-7xl mx-auto py-12 lg:px-0 px-4 text-center">
+        <div className="max-w-7xl mx-auto py-6 lg:px-0 px-4 text-center">
           <div className="flex justify-center items-end gap-2 mb-12">
             <div className="border-b-[1px] w-[100px] border-black lg:block hidden"></div>
             <h2 className="lg:text-4xl text-3xl font-bold text-center">
@@ -20,7 +20,7 @@ const WorkProcess = async () => {
           <div className="w-full grid lg:grid-cols-4 grid-cols-2 lg:gap-10 gap-6 justify-between items-center ">
             {response?.workprocess.map((step: any, index: number) => (
               <div key={step.number} className="relative text-center">
-                <div className="rounded-full overflow-hidden border-2 border-gray-900 w-56 h-56 mx-auto mb-4 p-2">
+                <div className="rounded-full overflow-hidden border-2 border-gray-900 w-45 md:w-56 h-48 md:h-56 mx-auto mb-4 p-2">
                   {/* <Image
                     src={step.imgSrc}
                     alt={step.Heading}
@@ -28,7 +28,6 @@ const WorkProcess = async () => {
                     height={160}
                     className="object-cover"
                   /> */}
-
                   <img
                     src={`${process.env.NEXT_PUBLIC_BASE_URL}${step?.image}`}
                     alt={step.Heading}

@@ -9,11 +9,13 @@ const SelectiveClients = async () => {
   }
   return (
     <div className="max-w-7xl mx-auto text-center py-8">
-      <h2 className="text-4xl font-bold mb-4">{response?.heading?.title}</h2>
-      <p className="mb-10 text-xl max-w-5xl mx-auto">
+    <div className="px-4">
+    <h2 className="text-4xl font-bold mb-4">{response?.heading?.title}</h2>
+      <p className="mb-10 text-xl md:max-w-5xl mx-auto">
         {response?.heading?.description}
       </p>
-      {/* <SelectiveClientsCart response={response} /> */}
+    </div>
+      <SelectiveClientsCart response={response} />
     </div>
   );
 };

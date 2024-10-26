@@ -49,30 +49,26 @@ const SelectedWorkTabsComponent = ({ tabsResponse }: Props) => {
           <div className="border-b-[1px] w-[100px] border-black lg:block hidden"></div>
         </div>
       )}
-
       <div className="flex lg:flex-row flex-col w-full">
         <div className="lg:w-1/5 w-full px-4">
-          <div className="flex lg:flex-col flex-row lg:w-full overflow-x-auto max-w-3xl lg:gap-20 gap-10 border-r-gray-900 border-r">
+          <div className="flex lg:flex-col flex-row lg:w-full overflow-x-auto max-w-3xl lg:gap-20 gap-10 border-r-gray-900 border-r md:mb-0 mb-7">
             {tabsResponse?.selectedworktabs.map((tab: any) => (
               <div key={tab?.id} className="w-full">
                 <div
-                  className={`w-auto text-lg font-medium flex lg:flex-row flex-col gap-3 ${
+                  className={`w-auto text-lg flex lg:flex-row flex-col gap-3 ${
                     activeTab === tab?.id
                       ? "text-black border-r-4 border-black"
                       : "text-black  lg:border-none border-r-1 border-gray-400"
                   } hover:text-black`}
-                  onClick={() => handleTabClick(tab?.id)}
-                >
+                  onClick={() => handleTabClick(tab?.id)}>
                   {activeTab === tab?.id && (
-                    <div className="lg:w-[5%] w-full bg-black lg:rounded-r-lg "></div>
+                    <div className="lg:w-[5%] w-full bg-gray-500 lg:rounded-r-lg"></div>
                   )}
-
-                  <p className="w-full px-4 text-2xl">{tab?.name}</p>
+                  <p className="w-full px-2 md:text-2xl text-center">{tab?.name}</p>
                 </div>
               </div>
             ))}
           </div>
-
           <div className="lg:flex justify-between mt-6 items-end gap-4 hidden">
             <button
               className="text-base font-normal text-secondary bg-black h-12 rounded-md hover:bg-black w-full text-center"
